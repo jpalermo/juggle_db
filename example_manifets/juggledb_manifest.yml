@@ -1,0 +1,11 @@
+applications:
+- name: juggledb
+  instances: 1
+  memory: 1024M
+  disk_quota: 1024M
+  routes:
+  - route: juggledb.SYSTEM_DOMAIN
+  buildpack: ruby_buildpack
+  env:
+    NATS_URI: nats://NATS_URI:NATS_PORT
+  stack: cflinuxfs2

@@ -1,0 +1,10 @@
+applications:
+- name: nats-server
+  instances: 1
+  memory: 1024M
+  disk_quota: 1024M
+  routes:
+  - route: TCP_ROUTE:TCP_PORT
+  buildpack: binary_buildpack
+  command: ./gnatsd -p $PORT
+  stack: cflinuxfs2
